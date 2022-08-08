@@ -4,7 +4,7 @@ import { CartContext } from './Content';
 import { AiOutlinePlus, AiOutlineMinus, AiFillDelete } from "react-icons/ai";
 
 const ShoppingCartItem = ({image,name,ourprice,id,no}) => {
-    const {IncreMent ,DecrementCart} = useContext(CartContext);
+    const {IncreMent ,DecrementCart,removefromCart} = useContext(CartContext);
     return (
         <>
                <div className="itlistitem">
@@ -15,7 +15,7 @@ const ShoppingCartItem = ({image,name,ourprice,id,no}) => {
                 <div className="numbere" >{no}</div>
                 <i className='pluses' onClick={() => IncreMent(id)}><AiOutlinePlus/></i>
             </div>
-            <div className="cost"> <div className="money"><i><BiRupee /></i> {ourprice}</div>   <i className='delete'><AiFillDelete/></i></div>
+            <div className="cost"> <div className="money"><i><BiRupee /></i> {ourprice}</div>   <i className='delete' onClick={() =>removefromCart(id)}><AiFillDelete/></i></div>
         </div>
         </>
     )

@@ -1,6 +1,6 @@
 export  const products = [
     {
-        image: "https://rukminim1.flixcart.com/image/416/416/xif0q/mobile/y/o/f/-original-imaggj68htbzzfhy.jpeg?q=70",
+        image: "https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1645512514/Croma%20Assets/Communication/Mobiles/Images/248899_10_q19i23.png/mxw_2048,f_auto",
         name: "Samsung Galaxy S22",
         ourprice: "59,000.00",
         mrp: "74,999.00",
@@ -9,7 +9,7 @@ export  const products = [
         no:"0"
     },
     {
-        image: "https://rukminim1.flixcart.com/image/416/416/ktketu80/mobile/8/z/w/iphone-13-mlph3hn-a-apple-original-imag6vzzhrxgazsg.jpeg?q=70",
+        image: "https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1631796370/Croma%20Assets/Communication/Mobiles/Images/243510_7_mwm4qp.png/mxw_2048,f_auto",
         name: "iPhone 13 pro",
         ourprice: "1,05,000",
         mrp: "1,10,000",
@@ -18,7 +18,7 @@ export  const products = [
         no:"0"
     },
     {
-        image: "https://rukminim1.flixcart.com/image/416/416/l5h2xe80/mobile/5/x/r/-original-imagg4xza5rehdqv.jpeg?q=70",
+        image: "https://cdn1.smartprix.com/rx-iRp9KQOEU-w1200-h1200/nothing-phone-1-8gb.webp",
         name: "Nothing Phone1",
         ourprice: "35,499",
         mrp: "37,970",

@@ -54,6 +54,11 @@ export const reducer =(state, action) =>{
         return { ...state, totalItem, totalAmount };
       
       }
-      
+
+          if (action.type === "DELETE") {
+            return { ...state, item: state.item.filter((curElem)=>{
+              return curElem.id !== action.payload;
+            }) };
+          }
  return state;
 };
