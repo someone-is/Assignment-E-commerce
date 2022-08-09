@@ -1,7 +1,9 @@
-import React from "react";
+import React,{useContext} from "react";
 import { BiRupee } from "react-icons/bi";
 import { products } from "./Data2.mjs";
+import { CartContext } from './Content';
 export default function Content2() {
+    const {clicktocart} = useContext(CartContext);
     return (
         <>
             <h2 className='heading2'>Primary Early Deals<span>|</span>Electronics</h2>
@@ -20,7 +22,7 @@ export default function Content2() {
                         </div>
                         <div className="lower2">
                             <div className="buttons2">
-                                <button type="button" className="btn btn-warning" id='Bluebutton2' >Add to Cart</button>
+                                <button type="button" className="btn btn-warning" id='Bluebutton2' onClick={() => clicktocart(item)} >Add to Cart</button>
                             </div>
                         </div>
                     </div>

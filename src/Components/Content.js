@@ -10,7 +10,7 @@ const initialState = {
     item: products,
     totalAmount: 0,
     totalItem: 0,
-    Addcart: [],
+    AddTCart:[],
 };
 const Content = () => {
 const [cart, setcart] = useState(false);
@@ -61,7 +61,7 @@ const showCart = () => setcart(!cart);
         return Addcart;
     }
     return (
-        <CartContext.Provider value={{ ...state, IncreMent, DecereSe,AddToCart,showCart, DecrementCart, clicktocart ,removefromCart}}>
+        <CartContext.Provider value={{ ...state, IncreMent, DecereSe,AddToCart,showCart, DecrementCart, clicktocart,Addcart ,removefromCart}}>
             <Navigation />
             <ContentItem/>
             <Content2/>

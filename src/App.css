@@ -19,16 +19,16 @@
   display: flex;
   border: 1px solid rgb(142, 50, 50);
   background-color: white;
-  text-align: center;
-  justify-items: center;
   border-radius: 50%;
   font-weight: 700;
-  padding-left: 4px;
-  padding-right: 4px;
-  right: 9px;
-  top: 0px;
+  aspect-ratio: 1/1;
+  padding: 0 4px;
+  align-items: center;
+  right: 11px;
+  top: 4px;
   color: red;
   font-size: 13px;
+  cursor: pointer;
 }
 
 .containr {
@@ -44,6 +44,7 @@
 .navigation ul {
   list-style: none;
   display: flex;
+  margin-top: 4%;
   color: white;
   align-items: center;
 }
@@ -439,7 +440,7 @@
   display: flex;
   justify-content: space-between;
   background: rgba(244, 244, 244, 0.155);
-  color: white;
+  color: black;
   margin: 10px 5px 10px 5px;
 }
 
@@ -447,7 +448,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   width: 30vw;
 }
 
@@ -583,6 +583,7 @@
   display: flex;
   justify-content: flex-end;
   font-size: larger;
+  margin-right: 15px;
 }
 
 @media screen and (min-width: 480px) {
@@ -601,6 +602,13 @@
   }
   .EmptyCart {
     margin-top: 1%;
+  }
+  .navigation ul {
+    list-style: none;
+    display: flex;
+    margin-top: 0.6%;
+    color: white;
+    align-items: center;
   }
 }
 

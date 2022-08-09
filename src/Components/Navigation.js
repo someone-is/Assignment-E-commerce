@@ -14,7 +14,7 @@ const Navigation = () => {
                     <li>home</li>
                     <li>Login</li>
                     <i><RiShoppingCart2Line onClick={() =>showCart()}/></i>
-                    <p className='circularNo' >{totalItem}</p>
+                    <p className='circularNo' onClick={() =>showCart()} >{totalItem}</p>
                 </ul>
                 
             </div>

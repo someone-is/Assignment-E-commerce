@@ -5,7 +5,7 @@ export  const products = [
         ourprice: "59,000.00",
         mrp: "74,999.00",
         off: "(20% off)",
-        id: "1",
+        id: "11",
         no:"0"
     },
     {
@@ -14,7 +14,7 @@ export  const products = [
         ourprice: "1,05,000",
         mrp: "1,10,000",
         off: "(20% off)",
-        id: "2",
+        id: "21",
         no:"0"
     },
     {
@@ -23,7 +23,7 @@ export  const products = [
         ourprice: "35,499",
         mrp: "37,970",
         off: "(20% off)",
-        id: "3",
+        id: "31",
         no:"0"
     },
     {
@@ -32,7 +32,7 @@ export  const products = [
         ourprice: "21,499",
         mrp: "22,999",
         off: "(20% off)",
-        id: "4",
+        id: "41",
         no:"0"
     },
     {
@@ -41,7 +41,7 @@ export  const products = [
         ourprice: "12599",
         mrp: "15,499",
         off: "(20% off)",
-        id: "5",
+        id: "51",
         no:"0"
     },
 
@@ -51,7 +51,7 @@ export  const products = [
         ourprice: "13,800",
         mrp: "16,000",
         off: "(20% off)",
-        id: "6",
+        id: "61",
         no:"0"
     }
 ];
