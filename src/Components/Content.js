@@ -5,6 +5,7 @@ import ContentItem from "./ContentItem.js";
 import Navigation from './Navigation.js';
 import Content2 from './Content2';
 import ShoppingCart from "./ShoppingCart.js";
+import { Toaster,toast } from "react-hot-toast";
 export const CartContext = createContext();
 const initialState = {
     item: products,
@@ -56,13 +57,15 @@ const showCart = () => setcart(!cart);
     const clicktocart=(itm)=>{
         Addcart.push(itm);
         console.log(Addcart);
+        toast.success(`${itm.name} added to the cart`);
         if (Addcart.indexOf(itm)!== -1) return;
-        setAddcart([...Addcart,itm])
-        return Addcart;
+        else{setAddcart([...Addcart,itm]);}
+
     }
     return (
         <CartContext.Provider value={{ ...state, IncreMent, DecereSe,AddToCart,showCart, DecrementCart, clicktocart,Addcart ,removefromCart}}>
             <Navigation />
+            <Toaster/>
             <ContentItem/>
             <Content2/>
             <nav className={cart ? 'ShoppingCartss active' : 'ShoppingCartss'}>
