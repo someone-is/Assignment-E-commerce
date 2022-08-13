@@ -4,26 +4,26 @@ import { CartContext } from './Content';
 import ShoppingCartItem from "./ShoppingCartItem";
 import { GrClose } from "react-icons/gr";
 const ShoppingCart = () => {
-    const { totalAmount, showCart,setbutton,item_cart,totalItem} = useContext(CartContext);
+    const { totalAmount, showCart, setbutton, item_cart, totalItem } = useContext(CartContext);
     const isEmpty = !item_cart.length;
     const EmptyCart = () => (
         <>
-        <div className="EmptyCartcontainer">
-            <div className="crossempty">
-        <div className="cross" onClick={() => showCart()}><i><GrClose /></i></div>
-        </div>
-        <h2 className='EmptyCart'>You have no item in your cart, start adding some!</h2>
-        <div className="mygif">
-        <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_47pyyfcf.json" speed="1"   loop  autoplay></lottie-player>
-        </div>
-        </div>
+            <div className="EmptyCartcontainer">
+                <div className="crossempty">
+                    <div className="cross" onClick={() => showCart()}><i><GrClose /></i></div>
+                </div>
+                <h2 className='EmptyCart'>You have no item in your cart, start adding some!</h2>
+                <div className="mygif">
+                    <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_47pyyfcf.json" speed="1" loop autoplay></lottie-player>
+                </div>
+            </div>
         </>
     )
     const FilledCart = () => (
         <>
             <div className="top">
-                <div className="head">Your Cart 
-                <div className="itemdet">({totalItem} items)</div>
+                <div className="head">Your Cart
+                    <div className="itemdet">({totalItem} items)</div>
                 </div>
                 <div className="cross" onClick={() => showCart()}><i><GrClose /></i></div>
             </div>
@@ -35,7 +35,7 @@ const ShoppingCart = () => {
             <div className="itlist">
                 {
                     item_cart.map((thisit) => {
-                        return <ShoppingCartItem key={thisit.id} {...thisit} addbuttn={setbutton}/>
+                        return <ShoppingCartItem key={thisit.id} {...thisit} addbuttn={setbutton} />
                     })
                 }
             </div>
@@ -54,7 +54,7 @@ const ShoppingCart = () => {
         <>
 
             <div className="ShoppingCart">
-                {isEmpty ? <EmptyCart/> : <FilledCart/>}
+                {isEmpty ? <EmptyCart /> : <FilledCart />}
             </div>
         </>
     )

@@ -13,11 +13,11 @@ export const reducer = (state, action) => {
       return curElem;
     });
 
-    return { ...state, item: updatedCart ,item_cart: updatedCart2};
+    return { ...state, item: updatedCart, item_cart: updatedCart2 };
   }
 
   if (action.type === "DECERESE") {
-    
+
     const updatedCart = state.item.map((curElem) => {
       if (curElem.id === action.payload) {
         if (curElem.no > 0) {
@@ -29,15 +29,15 @@ export const reducer = (state, action) => {
       }
 
       return curElem;
-    }); 
+    });
     const updatedCarts = state.item_cart.map((curElems) => {
       if (curElems.id === action.payload) {
         return { ...curElems, no: curElems.no - 1 };
       }
       return curElems;
     })
-    .filter((curElem) => curElem.no !== 0);
-    return { ...state, item: updatedCart, item_cart: updatedCarts};
+      .filter((curElem) => curElem.no !== 0);
+    return { ...state, item: updatedCart, item_cart: updatedCarts };
   }
   if (action.type === "CARTDEC") {
     const updatedCart = state.item_cart
@@ -73,8 +73,8 @@ export const reducer = (state, action) => {
 
   if (action.type === "DELETE") {
     return {
-        ...state, item_cart: state.item_cart.filter((thisit) => {
-          return thisit.id !== action.payload;
+      ...state, item_cart: state.item_cart.filter((thisit) => {
+        return thisit.id !== action.payload;
       })
     };
   }
