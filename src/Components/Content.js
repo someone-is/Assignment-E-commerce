@@ -58,7 +58,7 @@ const Content = () => {
     const clicktocart = (itm, setbutton) => {
         state.item_cart.push(itm);
         console.log(state.item_cart);
-        state.totalItem = itm.no;
+        state.totalItem = itm.no + 1;
         setbutton(false)
         toast.success(`${itm.name} added to the cart`);
 
@@ -75,6 +75,7 @@ const Content = () => {
         if (checkcart) {
             toast.success(`(${itm.no + 1}) ${itm.name} added to the cart`);
             ++state.totalItem;
+            state.totalAmount = state.totalAmount + (itm.ourprice * itm.no);
             state.item_cart.map((curElem) => {
                 if (curElem.id === itm.id) {
                     itm.no = curElem.no + 1;
@@ -87,6 +88,7 @@ const Content = () => {
             state.item_cart.push(itm);
             toast.success(`${itm.name} added to the cart`);
             ++state.totalItem;
+            state.totalAmount = state.totalAmount + (itm.ourprice * itm.no);
             state.item_cart.map((curEleme) => {
                 if (curEleme.id === itm.id) {
                     itm.no = 1;
