@@ -4,8 +4,8 @@ import { CartContext } from './Content';
 import ShoppingCartItem from "./ShoppingCartItem";
 import { GrClose } from "react-icons/gr";
 const ShoppingCart = () => {
-    const { totalAmount, showCart, Addcart } = useContext(CartContext);
-    const isEmpty = !Addcart.length;
+    const { totalAmount, showCart,setbutton,item_cart,totalItem} = useContext(CartContext);
+    const isEmpty = !item_cart.length;
     const EmptyCart = () => (
         <>
         <div className="EmptyCartcontainer">
@@ -22,7 +22,9 @@ const ShoppingCart = () => {
     const FilledCart = () => (
         <>
             <div className="top">
-                <div className="head">Your Cart</div>
+                <div className="head">Your Cart 
+                <div className="itemdet">({totalItem} items)</div>
+                </div>
                 <div className="cross" onClick={() => showCart()}><i><GrClose /></i></div>
             </div>
             <div className="headds">
@@ -32,14 +34,14 @@ const ShoppingCart = () => {
             </div>
             <div className="itlist">
                 {
-                    Addcart.map((thisit) => {
-                        return <ShoppingCartItem key={thisit.id} {...thisit} />
+                    item_cart.map((thisit) => {
+                        return <ShoppingCartItem key={thisit.id} {...thisit} addbuttn={setbutton}/>
                     })
                 }
             </div>
             <div className="footna">
                 <div className="totaL">Total</div>
-                <div className="totalcost"><i><BiRupee /></i> {totalAmount}</div>
+                <div className="totalcost"><i><BiRupee /></i>{totalAmount.toLocaleString('en-IN')}</div>
             </div>
             <div className="realfooter">
                 <div className="proceed">

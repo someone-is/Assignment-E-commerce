@@ -1,64 +1,82 @@
-export const reducer =(state, action) =>{
- 
-    if (action.type === "INCREASE") {
-        const updatedCart = state.item.map((curElem) => {
-          if (curElem.id === action.payload) {
-            return { ...curElem, no: curElem.no+1 };
-          }
-          return curElem;
-        });
-    
-        return { ...state, item: updatedCart };
+export const reducer = (state, action) => {
+  if (action.type === "INCREASE") {
+    const updatedCart = state.item.map((curElem) => {
+      if (curElem.id === action.payload) {
+        return { ...curElem, no: curElem.no + 1 };
       }
+      return curElem;
+    });
+    const updatedCart2 = state.item_cart.map((curElem) => {
+      if (curElem.id === action.payload) {
+        return { ...curElem, no: curElem.no + 1 };
+      }
+      return curElem;
+    });
 
-      if (action.type === "DECERESE") {
-        const updatedCart = state.item.map((curElem) => {
-          if (curElem.id === action.payload) {
-            if(curElem.no > 0){
-            return { ...curElem, no: curElem.no-- };
+    return { ...state, item: updatedCart ,item_cart: updatedCart2};
+  }
+
+  if (action.type === "DECERESE") {
+    
+    const updatedCart = state.item.map((curElem) => {
+      if (curElem.id === action.payload) {
+        if (curElem.no > 0) {
+          return { ...curElem, no: curElem.no-- };
         }
-          }
-          return curElem;
-        });
-    
-        return { ...state, item: updatedCart };
-      }
-      if (action.type === "CARTDEC") {
-        const updatedCart = state.item
-          .map((curElem) => {
-            if (curElem.id === action.payload) {
-              return { ...curElem, no: curElem.no - 1 };
-            }
-            return curElem;
-          })
-          .filter((curElem) => curElem.no !== 0);
-        return { ...state, item: updatedCart };
+        else if (curElem.no <= 0) {
+          action.buttns(true)
+        }
       }
 
-      if (action.type === "TOTAL") {
-        let { totalItem, totalAmount } = state.item.reduce(
-          (accum, curVal) => {
-            let { mrp, no } = curVal;
-    
-            let updatedTotalAmount = mrp * no;
-            accum.totalAmount += updatedTotalAmount;
-    
-            accum.totalItem =  accum.totalItem + no ;
-            return accum;
-          },
-          {
-            totalItem: 0,
-            totalAmount: 0,
-          }
-        );
-        return { ...state, totalItem, totalAmount };
-      
+      return curElem;
+    }); 
+    const updatedCarts = state.item_cart.map((curElems) => {
+      if (curElems.id === action.payload) {
+        return { ...curElems, no: curElems.no - 1 };
       }
+      return curElems;
+    })
+    .filter((curElem) => curElem.no !== 0);
+    return { ...state, item: updatedCart, item_cart: updatedCarts};
+  }
+  if (action.type === "CARTDEC") {
+    const updatedCart = state.item_cart
+      .map((curElem) => {
+        if (curElem.id === action.payload) {
+          return { ...curElem, no: curElem.no - 1 };
+        }
+        return curElem;
+      })
+      .filter((curElem) => curElem.no !== 0);
+    return { ...state, item_cart: updatedCart };
+  }
 
-          if (action.type === "DELETE") {
-            return { ...state, item: state.item.filter((thisit)=>{
-              return thisit.id !== action.payload;
-            }) };
-          }
- return state;
+  if (action.type === "TOTAL") {
+    let { totalItem, totalAmount } = state.item_cart.reduce(
+      (accum, curVal) => {
+        let { ourprice, no } = curVal;
+
+        let updatedTotalAmount = ourprice * no;
+        accum.totalAmount += updatedTotalAmount;
+
+        accum.totalItem = accum.totalItem + no;
+        return accum;
+      },
+      {
+        totalItem: 0,
+        totalAmount: 0,
+      }
+    );
+    return { ...state, totalItem, totalAmount };
+
+  }
+
+  if (action.type === "DELETE") {
+    return {
+        ...state, item_cart: state.item_cart.filter((thisit) => {
+          return thisit.id !== action.payload;
+      })
+    };
+  }
+  return state;
 };

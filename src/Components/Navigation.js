@@ -3,8 +3,8 @@ import { RiShoppingCart2Line } from "react-icons/ri";
 import { CartContext } from './Content';
 
 const Navigation = () => {
-    const {totalItem, showCart}=useContext(CartContext);
- 
+    const { totalItem, showCart } = useContext(CartContext);
+
     return (
         <div className='navigation'>
             <div className="containr">
@@ -13,10 +13,10 @@ const Navigation = () => {
                 <ul>
                     <li>home</li>
                     <li>Login</li>
-                    <i><RiShoppingCart2Line onClick={() =>showCart()}/></i>
-                    <p className='circularNo' onClick={() =>showCart()} >{totalItem}</p>
+                    <i><RiShoppingCart2Line onClick={() => showCart()} /></i>
+                    <p className='circularNo' onClick={() => showCart()} >{totalItem}</p>
                 </ul>
-                
+
             </div>
         </div>
     )
