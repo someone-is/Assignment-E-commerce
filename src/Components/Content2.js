@@ -17,7 +17,7 @@ export default function Content2() {
                                 <div className="name" id="nameP">{item.name}</div>
                                 <div className="rate2">
                                     <div className="ourprice"><i><BiRupee /></i><span>{item.ourprice.toLocaleString('en-IN')}</span></div>
-                                    <div className="mrp">M.R.P <p><i><BiRupee /></i>{item.mrp}</p><span>{item.off}</span></div>
+                                    <div className="mrp">M.R.P <p><i><BiRupee /></i>{item.mrp}</p><span>{item.off}</span><h1>hi</h1></div>
                                 </div>
                             </div>
                             <div className="lower2">

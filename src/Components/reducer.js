@@ -32,7 +32,7 @@ export const reducer = (state, action) => {
     });
     const updatedCarts = state.item_cart.map((curElems) => {
       if (curElems.id === action.payload) {
-        return { ...curElems, no: curElems.no - 1 };
+        return { ...curElems, no: curElems.no -- };
       }
       return curElems;
     })

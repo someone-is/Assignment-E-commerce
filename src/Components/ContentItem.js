@@ -6,7 +6,7 @@ const ContentItem = () => {
 
     return (
         <>
-            <h2 className='heading'>Groceries</h2>
+            <h2 className='heading'>Groceries<h1>hi</h1></h2>
             <hr />
             <div className="things">
 
