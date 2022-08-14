@@ -107,6 +107,7 @@ const Content = () => {
         <CartContext.Provider value={{ ...state, IncreMent, DecereSe, clicktocart, clicktocarts, AddToCart, showCart, DecrementCart, removefromCart }}>
             <Navigation />
             <Toaster />
+            <h1>hi</h1>
             <ContentItem />
             <Content2 />
             <nav className={cart ? 'ShoppingCartss active' : 'ShoppingCartss'}>
