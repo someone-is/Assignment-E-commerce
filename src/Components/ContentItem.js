@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import CartItems from "./CartItems.js";
 import { CartContext } from "./Content"
 const ContentItem = () => {
-    const { item } = useContext(CartContext);
+    const { item,button,setbutton } = useContext(CartContext);
 
     return (
         <>
@@ -12,7 +12,7 @@ const ContentItem = () => {
 
                 {
                     item.map((CurrentIt) => {
-                        return <CartItems key={CurrentIt.id} {...CurrentIt} itm={CurrentIt} />
+                        return <CartItems key={CurrentIt.id} {...CurrentIt} itm={CurrentIt} sbu={setbutton} bu={button} />
                     })
                 }
 

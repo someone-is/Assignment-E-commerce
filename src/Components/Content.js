@@ -26,22 +26,15 @@ const Content = () => {
         });
     };
 
-    const DecereSe = (id, setbutton) => {
+    const DecereSe = (id) => {
         return dispatch({
             type: "DECERESE",
             payload: id,
-            buttns: setbutton,
         });
     };
     const AddToCart = (id) => {
         return dispatch({
             type: "ADDTOCART",
-            payload: id,
-        });
-    };
-    const DecrementCart = (id) => {
-        return dispatch({
-            type: "CARTDEC",
             payload: id,
         });
     };
@@ -51,14 +44,11 @@ const Content = () => {
             payload: id,
         });
     }
-
-    useEffect(() => {
-        dispatch({ type: "TOTAL" });
-    }, [state.item, state.item_cart]);
     const clicktocart = (itm, setbutton) => {
         state.item_cart.push(itm);
         console.log(state.item_cart);
-        state.totalItem = itm.no + 1;
+        state.totalItem++;
+        state.totalAmount = state.totalAmount + (itm.ourprice * itm.no);
         setbutton(false)
         toast.success(`${itm.name} added to the cart`);
 
@@ -70,6 +60,13 @@ const Content = () => {
 
         // }
     }
+    // useCallback(
+    //   () => {
+    //     first
+    //   },
+    //   [second],
+    // )
+
     const clicktocarts = (itm) => {
         const checkcart = state.item_cart.find((itms) => itms.id === itm.id);
         if (checkcart) {
@@ -103,8 +100,13 @@ const Content = () => {
             //     }
         }
     }
+
+
+    useEffect(() => {
+        dispatch({ type: "TOTAL" });
+    }, [state.item, state.item_cart, state.totalItem]);
     return (
-        <CartContext.Provider value={{ ...state, IncreMent, DecereSe, clicktocart, clicktocarts, AddToCart, showCart, DecrementCart, removefromCart }}>
+        <CartContext.Provider value={{ ...state, IncreMent, DecereSe, clicktocart, clicktocarts, AddToCart, showCart, removefromCart }}>
             <Navigation />
             <Toaster />
             <ContentItem />

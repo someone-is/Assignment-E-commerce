@@ -24,7 +24,7 @@ export const reducer = (state, action) => {
           return { ...curElem, no: curElem.no-- };
         }
         else if (curElem.no <= 0) {
-          action.buttns(true)
+          return{...curElem,no: 1};
         }
       }
 
@@ -32,23 +32,17 @@ export const reducer = (state, action) => {
     });
     const updatedCarts = state.item_cart.map((curElems) => {
       if (curElems.id === action.payload) {
+        if (curElems.no > 0) {
         return { ...curElems, no: curElems.no - 1 };
       }
+      else if (curElems.no <= 0) {
+        return{...curElems,no: 0};
+      }
+    }
       return curElems;
     })
-      .filter((curElem) => curElem.no !== 0);
+      .filter((curElems) => curElems.no !== 0);
     return { ...state, item: updatedCart, item_cart: updatedCarts };
-  }
-  if (action.type === "CARTDEC") {
-    const updatedCart = state.item_cart
-      .map((curElem) => {
-        if (curElem.id === action.payload) {
-          return { ...curElem, no: curElem.no - 1 };
-        }
-        return curElem;
-      })
-      .filter((curElem) => curElem.no !== 0);
-    return { ...state, item_cart: updatedCart };
   }
 
   if (action.type === "TOTAL") {
@@ -60,6 +54,9 @@ export const reducer = (state, action) => {
         accum.totalAmount += updatedTotalAmount;
 
         accum.totalItem = accum.totalItem + no;
+        if(accum.totalItem<0){
+          accum.totalItem=0;
+        }
         return accum;
       },
       {

@@ -6,6 +6,12 @@ import { CartContext } from './Content';
 const CartItems = ({ image, name, ourprice, mrp, off, id, no, itm, unit }) => {
     const { IncreMent, DecereSe, clicktocart } = useContext(CartContext);
     const [button, setbutton] = useState(true)
+    const Setbu=()=>{
+        if (no<=1) {
+            setbutton(true)
+        }
+        return
+    }
     return (
         <>
             <div className="tile">
@@ -29,7 +35,11 @@ const CartItems = ({ image, name, ourprice, mrp, off, id, no, itm, unit }) => {
                                     null :
 
                                     <div className="IandD">
-                                        <button className='minus' onClick={() => DecereSe(id, setbutton)}><span>-</span></button>
+                                        <button className='minus' onClick={() => {
+                                            DecereSe(id) 
+                                            Setbu()
+                                            }}>
+                                            <span>-</span></button>
                                         <div className="number" >{no}</div>
                                         <button className='plus' onClick={() => IncreMent(id)}><span>+</span></button>
                                     </div>
