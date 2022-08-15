@@ -3,7 +3,7 @@ export const reducer = (state, action) => {
   if (action.type === "INCREASE") {
     const updatedCart = state.item.map((curElem) => {
       if (curElem.id === action.payload) {
-        return { ...curElem, no: curElem.no ++ };
+        return { ...curElem, no: curElem.no + 1 };
       }
       return curElem;
     });
