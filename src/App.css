@@ -806,6 +806,9 @@
     margin-top: 0px;
     margin-left: 20px;
   }
+  .EmptyCart{
+    margin-top: 40%;
+  }
 }
 
 @media screen and (max-width: 1144px) {

@@ -14,7 +14,7 @@ const initialState = {
     totalItem: 0,
     item_cart: [],
 };
-const Content = () => {
+const Content = ({logAcc,Accountlog,navlogin,purchaseb,purchase}) => {
     const [cart, setcart] = useState(false);
     const showCart = () => setcart(!cart);
 
@@ -107,12 +107,12 @@ const Content = () => {
     }, [state.item, state.item_cart, state.totalItem]);
     return (
         <CartContext.Provider value={{ ...state, IncreMent, DecereSe, clicktocart, clicktocarts, AddToCart, showCart, removefromCart }}>
-            <Navigation />
+            <Navigation Accountlog={Accountlog} logAcc={logAcc} navlogin={navlogin} />
             <Toaster />
             <ContentItem />
             <Content2 />
             <nav className={cart ? 'ShoppingCartss active' : 'ShoppingCartss'}>
-                <ShoppingCart />
+                <ShoppingCart purchase={purchase} purchaseb={purchaseb}/>
             </nav>
         </CartContext.Provider>
     )

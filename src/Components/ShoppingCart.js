@@ -3,8 +3,8 @@ import { BiRupee } from "react-icons/bi";
 import { CartContext } from './Content';
 import ShoppingCartItem from "./ShoppingCartItem";
 import { GrClose } from "react-icons/gr";
-const ShoppingCart = () => {
-    const { totalAmount, showCart, setbutton, item_cart, totalItem } = useContext(CartContext);
+const ShoppingCart = ({purchaseb,purchase}) => {
+    const { totalAmount, showCart, item_cart, totalItem } = useContext(CartContext);
     const isEmpty = !item_cart.length;
     const EmptyCart = () => (
         <>
@@ -35,7 +35,7 @@ const ShoppingCart = () => {
             <div className="itlist">
                 {
                     item_cart.map((thisit) => {
-                        return <ShoppingCartItem key={thisit.id} {...thisit} addbuttn={setbutton} />
+                        return <ShoppingCartItem key={thisit.id} {...thisit}/>
                     })
                 }
             </div>
@@ -45,7 +45,7 @@ const ShoppingCart = () => {
             </div>
             <div className="realfooter">
                 <div className="proceed">
-                    <button type="button" className="btn btn-warning" id='button2'>Purchase</button>
+                    <button type="button" className="btn btn-warning" id='button2' onClick={() => purchase()} >{purchaseb}</button>
                 </div>
             </div>
         </>

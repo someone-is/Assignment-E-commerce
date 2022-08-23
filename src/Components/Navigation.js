@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { RiShoppingCart2Line } from "react-icons/ri";
 import { CartContext } from './Content';
 
-const Navigation = () => {
+const Navigation = ({Accountlog, navlogin}) => {
     const { totalItem, showCart } = useContext(CartContext);
 
     return (
@@ -12,7 +12,7 @@ const Navigation = () => {
                 <div className="logo">Magic<img src="https://img.icons8.com/external-xnimrodx-lineal-gradient-xnimrodx/64/000000/external-magic-entertainment-xnimrodx-lineal-gradient-xnimrodx.png" width={"40px"} alt="logo" />Cart</div>
                 <ul>
                     <li>home</li>
-                    <li>Login</li>
+                    <li onClick={() => Accountlog()}>{navlogin}</li>
                     <i><RiShoppingCart2Line onClick={() => showCart()} /></i>
                     <p className='circularNo' onClick={() => showCart()} >{totalItem}</p>
                 </ul>
