@@ -6,6 +6,7 @@ import Navigation from './Navigation.js';
 import Content2 from './Content2';
 import ShoppingCart from "./ShoppingCart.js";
 import { Toaster, toast } from "react-hot-toast";
+import Sliders from "./slider/Sliders.js";
 
 export const CartContext = createContext();
 const initialState = {
@@ -109,6 +110,7 @@ const Content = ({logAcc,Accountlog,navlogin,purchaseb,purchase}) => {
         <CartContext.Provider value={{ ...state, IncreMent, DecereSe, clicktocart, clicktocarts, AddToCart, showCart, removefromCart }}>
             <Navigation Accountlog={Accountlog} logAcc={logAcc} navlogin={navlogin} />
             <Toaster />
+            <Sliders/>
             <ContentItem />
             <Content2 />
             <nav className={cart ? 'ShoppingCartss active' : 'ShoppingCartss'}>

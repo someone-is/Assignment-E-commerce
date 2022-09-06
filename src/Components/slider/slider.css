@@ -1,0 +1,157 @@
+.SLider {
+    position: relative;
+    margin-top: 80px;
+    height: 40vh;
+    width: 110%;
+    margin-left: -5%;
+    /* box-shadow: 1px 10px 100px 0px black; */
+}
+
+.SLider:hover .bar {
+    opacity: 1;
+}
+
+.SLider:hover .back {
+    opacity: 1;
+}
+
+.SLider:hover .forward {
+    opacity: 1;
+}
+
+#image {
+    height: 45vh;
+    margin-top: 20px;
+}
+#image1 {
+    height: 48vh;
+    max-width: 94%;
+    margin-left: 3%;
+    margin-top: 0px;
+}
+
+.bar {
+    margin-bottom: -80px;
+    opacity: 0;
+    transition: 0.5s ease-in;
+    font-size: x-large;
+}
+
+.descri {
+    margin-bottom: 280px;
+    margin-right: 50%;
+    margin-left: -250px;
+}
+.descri h5 {
+    font-size: 50px;
+    font-weight: 700;
+    color: white;
+}
+.descri p {
+    font-size: large;
+    font-weight: 600;
+    color: black;
+}
+.descri13 {
+    margin-bottom: 250px;
+    margin-right: 50%;
+    margin-left: -400px;
+    font-size: x-large;
+}
+.descri13 h5 {
+    font-size: 40px;
+    font-weight: 700;
+    color: white;
+}
+.descri22 {
+    margin-bottom: 200px;
+    align-items: center;
+    font-size: x-large;
+}
+.descri22 h5 {
+    font-size: 40px;
+    font-weight: 700;
+    color: white;
+}
+.descri22 span {
+    font-size: 40px;
+    font-weight: 700;
+    color: black;
+}
+
+.back {
+    margin-top: 80px;
+    margin-left: -40px;
+    opacity: 0;
+    transition: 0.5s ease-in;
+}
+
+.forward {
+    margin-top: 80px;
+    margin-right: -40px;
+    opacity: 0;
+    transition: 0.5s ease-in;
+}
+
+.bga {
+    background: linear-gradient(to bottom, rgb(46, 133, 155) 60%, rgba(46, 133, 155, 0));
+}
+
+.bgb {
+    background: linear-gradient(to bottom, rgb(191, 124, 23), rgba(255, 235, 205, 0));
+}
+.bgd {
+    background: linear-gradient(to bottom, rgb(22, 142, 84), rgba(255, 235, 205, 0));
+}
+
+.bgc {
+    background: linear-gradient(to bottom, rgba(227, 227, 104, 0.882)  60%, rgba(0, 0, 0, 0));
+}
+
+.Boxx {
+    height: 60vh;
+    z-index: -8;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 412px) {
+    .Boxx {
+        height: 70vh;
+    }
+    #image1 {
+        height: 45vh;
+        max-width: 100%;
+        margin-left: 0%;
+        margin-top: 20px;
+    }
+    .SLider {
+        height: 50vh;
+        margin: 50px -30px;
+        margin-top: 50px;
+        width: 118%;
+        margin-left: -9%;
+    }
+    .mine{
+        width: 100%;
+    }
+    #image {
+        display: none;
+        height: 38vh;
+        margin-top: 50px;
+    }
+
+    .back {
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+
+    .forward {
+        margin-top: 0px;
+        margin-right: 0px;
+    }
+
+    .bar {
+        margin-bottom: -60px;
+        opacity: 0;
+    }
+}
