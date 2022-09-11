@@ -102,7 +102,6 @@ const Content = ({logAcc,Accountlog,navlogin,purchaseb,purchase}) => {
         }
     }
 
-
     useEffect(() => {
         dispatch({ type: "TOTAL" });
     }, [state.item, state.item_cart, state.totalItem]);
